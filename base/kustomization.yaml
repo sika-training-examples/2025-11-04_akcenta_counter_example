@@ -8,3 +8,5 @@ resources:
   - frontend_ingress_sikademo_com.yaml
   - frontend_ingress.yaml
   - frontend_service.yaml
+  - redis_sts.yaml
+  - redis_service.yaml

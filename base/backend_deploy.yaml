@@ -20,8 +20,8 @@ spec:
             - name: http
               containerPort: 8000
           env:
-            - name: BACKEND
-              value: inmemory
+            - name: REDIS
+              value: redis
           resources:
             requests:
               cpu: 50m
