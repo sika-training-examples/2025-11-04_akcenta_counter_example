@@ -1,13 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: frontend
+  name: frontend-sikademo-com
   annotations:
-    route.openshift.io/termination: edge
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: openshift-default
+  tls:
+    - hosts:
+        - counter-dev.openshift.sikademo.com
+      secretName: counter-dev.openshift.sikademo.com-tls
   rules:
-    - host: counter.apps.training.germanywestcentral.aroapp.io
+    - host: counter-dev.openshift.sikademo.com
       http:
         paths:
           - path: /
